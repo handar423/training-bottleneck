@@ -81,13 +81,13 @@ class ExpRunner:
     def _start_containers(self):
         """"""
         stop_cmd = "docker kill $(docker ps -q)"
-        pull_cmd = "docker pull zarzen/horovod-mod:1.0"
+        pull_cmd = "docker pull handar423/horovod-mod:1.0"
 
         start_cmd = "sudo docker run --gpus all --network=host --detach --ipc=host "\
             "-v {}/autorun/distributed-training:{}/distributed-training "\
             "-v {}/autorun/horovod_logs:{}/horovod_logs "\
             "-v {}/data:{}/data "\
-            "zarzen/horovod-mod:1.0".format(self.host_user_dir, self.docker_user_dir,
+            "handar423/horovod-mod:1.0".format(self.host_user_dir, self.docker_user_dir,
                                             self.host_user_dir, self.docker_user_dir,
                                             self.host_user_dir, self.docker_user_dir)
         self.docker_ids = {}

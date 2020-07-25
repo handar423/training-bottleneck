@@ -106,11 +106,9 @@ RUN mkdir /tmp/openmpi && \
 
 
 # Install modified horovod
-# jys:这里改成自己的库
 RUN cd ${HOME} && \
-    wget https://dt-training.s3.amazonaws.com/horovod-modified.tar.gz && \
-    tar -zxf horovod-modified.tar.gz && \
-    cd ${HOME}/horovod-modified && \
+    git clone -b test-base-thread --recursive https://handar423:jysznhldqt1@github.com/handar423/test-horovod.git && \
+    cd ${HOME}/test-horovod && \
     pwd && \
     HOROVOD_GPU_ALLREDUCE=NCCL \
     HOROVOD_WITH_MPI=1 \

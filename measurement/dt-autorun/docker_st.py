@@ -48,14 +48,14 @@ class SingleNodeExp(ExpRunner):
                         "mkdir ~/autorun/logs/net; mkdir ~/autorun/logs/cpu; mkdir ~/data "
         subprocess.run(check_cmd, shell=True)
 
-        check_cmd = "cd ~/autorun; ls|grep distributed-training"
+        check_cmd = "cd ~/autorun; find . -name distributed-training"
         output = subprocess.check_output(check_cmd, shell=True)
         if output != b"":
             git_pull = "cd ~/autorun/distributed-training; git pull"
             subprocess.run(git_pull, shell=True)
         else:
             cmd = "cd ~/autorun;"\
-                    "git clone https://github.com/zarzen/distributed-training.git"
+                    "git clone https://github.com/handar423/distributed-training.git"
             subprocess.run(cmd, shell=True) 
     
     def run(self):

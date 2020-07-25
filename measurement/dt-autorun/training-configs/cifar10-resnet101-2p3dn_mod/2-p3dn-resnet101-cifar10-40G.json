@@ -7,12 +7,12 @@
     "docker_user": "cluster",
     "docker_ssh_port": 2022,
     "docker_ssh_key": "./DockerEnv/ssh-keys/id_rsa",
-    "script_path": "~/horovod-modified/examples/pytorch_synthetic_benchmark.py",
-    "script_args": "--model resnet101 --batch-size 64",
-    "nodes": ["localhost"],
-    "nGPU": 1,
+    "script_path": "~/distributed-training/test_scripts/pytorch_resnet101_cifar10.py",
+    "script_args": "--epochs 20",
+    "nodes": ["localhost", ""],
+    "nGPU": 8,
     "eth": "ens5",
-    "bw_limit": "10Gbit",
+    "bw_limit": "40Gbit",
     "default_bw": "100Gbit",
     "log_folder": "p3dn-ResNet101-CIFAR10"
 }
