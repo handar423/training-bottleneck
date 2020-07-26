@@ -8,11 +8,11 @@
     "docker_ssh_port": 2022,
     "docker_ssh_key": "./DockerEnv/ssh-keys/id_rsa",
     "script_path": "~/horovod-modified/examples/pytorch_synthetic_benchmark.py",
-    "script_args": "--model resnet101 --batch-size 64",
-    "nodes": ["localhost"],
-    "nGPU": 1,
+    "script_args": "--model resnet101 --batch-size 32",
+    "nodes": ["localhost", "172.31.14.32"],
+    "nGPU": 8,
     "eth": "ens5",
-    "bw_limit": "10Gbit",
+    "bw_limit": "40Gbit",
     "default_bw": "100Gbit",
     "log_folder": "p3dn-ResNet101-CIFAR10"
 }
